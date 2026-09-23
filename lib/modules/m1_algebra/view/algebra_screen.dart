@@ -143,19 +143,25 @@ class _PracticaSimplificacion extends ConsumerWidget {
             }
             return Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: OutlinedButton(
-                onPressed: estado.opcionSeleccionada == null
-                    ? () => vm.seleccionarOpcion(i)
-                    : null,
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  side: BorderSide(
-                      color: colorBorde ?? Colors.white24, width: 2),
-                  alignment: Alignment.centerLeft,
+              child: SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: estado.opcionSeleccionada == null
+                      ? () => vm.seleccionarOpcion(i)
+                      : null,
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 14, horizontal: 20),
+                    side: BorderSide(
+                        color: colorBorde ?? Colors.white24, width: 2),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  child: Text(ejercicio.opciones[i],
+                      style: const TextStyle(
+                          color: Colors.white, fontFamily: 'monospace')),
                 ),
-                child: Text(ejercicio.opciones[i],
-                    style: const TextStyle(
-                        color: Colors.white, fontFamily: 'monospace')),
               ),
             );
           }),

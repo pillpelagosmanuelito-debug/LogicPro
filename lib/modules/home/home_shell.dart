@@ -69,16 +69,21 @@ class _HomeShellState extends State<HomeShell>
           ),
         ],
       ),
-      body: TabBarView(
-        controller: _controlador,
-        children: [
-          InicioScreen(onAbrirModulo: _irAModulo),
-          const AlgebraScreen(),
-          const CompuertasScreen(),
-          const TablasScreen(),
-          const CombinacionalesScreen(),
-          const SecuencialesScreen(),
-        ],
+      // SafeArea evita que el contenido (p. ej. botones al pie) quede
+      // debajo de la barra de navegación del sistema en Android.
+      body: SafeArea(
+        top: false,
+        child: TabBarView(
+          controller: _controlador,
+          children: [
+            InicioScreen(onAbrirModulo: _irAModulo),
+            const AlgebraScreen(),
+            const CompuertasScreen(),
+            const TablasScreen(),
+            const CombinacionalesScreen(),
+            const SecuencialesScreen(),
+          ],
+        ),
       ),
     );
   }
