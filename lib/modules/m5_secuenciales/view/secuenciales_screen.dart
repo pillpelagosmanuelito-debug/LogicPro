@@ -10,15 +10,15 @@ class SecuencialesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Column(
         children: [
-          const TabBar(tabs: [
+          TabBar(tabs: [
             Tab(text: 'Flip-flops'),
             Tab(text: 'Contador binario'),
           ]),
-          const Expanded(
+          Expanded(
             child: TabBarView(
               children: [_FlipFlopView(), _ContadorView()],
             ),

@@ -10,11 +10,11 @@ class AlgebraScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Column(
         children: [
-          const TabBar(
+          TabBar(
             tabs: [
               Tab(text: 'Leyes booleanas'),
               Tab(text: 'Práctica: simplificar'),
@@ -23,8 +23,8 @@ class AlgebraScreen extends ConsumerWidget {
           Expanded(
             child: TabBarView(
               children: [
-                const _ListaLeyes(),
-                const _PracticaSimplificacion(),
+                _ListaLeyes(),
+                _PracticaSimplificacion(),
               ],
             ),
           ),

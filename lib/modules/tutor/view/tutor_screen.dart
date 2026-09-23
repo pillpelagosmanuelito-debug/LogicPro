@@ -27,9 +27,6 @@ class _TutorScreenState extends State<TutorScreen> {
   List<bool> _entradas = [false, false];
   DiagnosticoTutor? _diagnostico;
 
-  InfoCompuerta get _info =>
-      catalogoCompuertas.firstWhere((c) => c.tipo == _tipo);
-
   void _elegirTipo(TipoCompuerta tipo) {
     setState(() {
       _tipo = tipo;

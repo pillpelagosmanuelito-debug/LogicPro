@@ -10,15 +10,15 @@ class TablasScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Column(
         children: [
-          const TabBar(tabs: [
+          TabBar(tabs: [
             Tab(text: 'Generador'),
             Tab(text: 'Completa la tabla'),
           ]),
-          const Expanded(
+          Expanded(
             child: TabBarView(
               children: [_GeneradorView(), _EjercicioTablaView()],
             ),
@@ -143,9 +143,9 @@ class _EjercicioTablaView extends ConsumerWidget {
           Text('Completa la salida para: ${ejercicio.expresion}',
               style: const TextStyle(color: Colors.white, fontSize: 16)),
           const SizedBox(height: 6),
-          Text(
+          const Text(
             'Toca las celdas marcadas con "?" y elige 0 o 1.',
-            style: const TextStyle(color: Colors.white54, fontSize: 12),
+            style: TextStyle(color: Colors.white54, fontSize: 12),
           ),
           const SizedBox(height: 16),
           Expanded(
